@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"uni.adavanced_programming.the8puzzle","l":"EightBoard"},{"p":"uni.adavanced_programming.the8puzzle","l":"EightController"},{"p":"uni.adavanced_programming.the8puzzle","l":"EightTile"},{"p":"uni.adavanced_programming.the8puzzle","l":"The8puzzle"}]
