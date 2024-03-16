@@ -1,0 +1,50 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/src/main/java:/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'the8puzzle 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' '/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'the8puzzle 1.0-SNAPSHOT API'
+uni.adavanced_programming.the8puzzle
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/src/main/java = 1710236934251
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/generated-sources/annotations = 1710611958859
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/overview-tree.html = 1710611963151
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/element-list = 1710611963115
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/deprecated-list.html = 1710611963175
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/package-search-index.zip = 1710611963163
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/type-search-index.zip = 1710611963167
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/serialized-form.html = 1710611963139
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/jquery-ui.overrides.css = 1710611963191
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/allclasses.html = 1710611963179
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/index.html = 1710611963179
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/script.js = 1710611963183
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/index-all.html = 1710611963167
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/allclasses-index.html = 1710611963171
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/package-search-index.js = 1710611963163
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/help-doc.html = 1710611963183
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/member-search-index.js = 1710611963167
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/allpackages-index.html = 1710611963171
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/stylesheet.css = 1710611963183
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/type-search-index.js = 1710611963163
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/search.js = 1710611963183
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/constant-values.html = 1710611963127
+/home/nicola/Scrivania/Magistrale/Advanced Programming/AP_assignments/assignment_1/the8puzzle/target/apidocs/member-search-index.zip = 1710611963167
