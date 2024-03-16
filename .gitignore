@@ -1,3 +1,4 @@
 *.pdf
 aux_files
-*/target/
+assignment*/*/target/
+nb*.xml
