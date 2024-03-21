@@ -8,6 +8,9 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Collections;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  *
@@ -15,6 +18,7 @@ import java.util.Collections;
  */
 public class EightBoard extends javax.swing.JFrame implements PropertyChangeListener{
     
+    private final static Logger logger=LogManager.getLogger(EightBoard.class);
     private ArrayList<Integer> randomInizialization=new ArrayList<Integer>();
 
     /**
@@ -24,12 +28,19 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         for(int i=0;i<9;i++)
             randomInizialization.add(i+1);
         Collections.shuffle(randomInizialization);
+        logger.debug("Initializing new components with random configuration");
         initComponents();
     }
     
+    /**
+     *
+     * @param pce
+     */
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(!pce.getPropertyName().equals("restart")){
+            logger.error("");
+        }
     }
 
     /**
@@ -42,21 +53,22 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        eightTile1 = new uni.adavanced_programming.the8puzzle.EightTile(1,this.randomInizialization.remove(0).toString());
-        eightTile2 = new uni.adavanced_programming.the8puzzle.EightTile(2, this.randomInizialization.remove(0).toString());
-        eightTile3 = new uni.adavanced_programming.the8puzzle.EightTile(3, this.randomInizialization.remove(0).toString());
-        eightTile4 = new uni.adavanced_programming.the8puzzle.EightTile(4, this.randomInizialization.remove(0).toString());
-        eightTile5 = new uni.adavanced_programming.the8puzzle.EightTile(5, this.randomInizialization.remove(0).toString());
-        eightTile6 = new uni.adavanced_programming.the8puzzle.EightTile(6,this.randomInizialization.remove(0).toString());
-        eightTile7 = new uni.adavanced_programming.the8puzzle.EightTile(7,this.randomInizialization.remove(0).toString());
-        eightTile8 = new uni.adavanced_programming.the8puzzle.EightTile(8, this.randomInizialization.remove(0).toString());
-        eightTile9 = new uni.adavanced_programming.the8puzzle.EightTile(9,this.randomInizialization.remove(0).toString());
+        eightTile1 = new uni.adavanced_programming.the8puzzle.EightTile(1,this.randomInizialization.get(0).toString());
+        eightTile2 = new uni.adavanced_programming.the8puzzle.EightTile(2, this.randomInizialization.get(1).toString());
+        eightTile3 = new uni.adavanced_programming.the8puzzle.EightTile(3, this.randomInizialization.get(2).toString());
+        eightTile4 = new uni.adavanced_programming.the8puzzle.EightTile(4, this.randomInizialization.get(3).toString());
+        eightTile5 = new uni.adavanced_programming.the8puzzle.EightTile(5, this.randomInizialization.get(4).toString());
+        eightTile6 = new uni.adavanced_programming.the8puzzle.EightTile(6,this.randomInizialization.get(5).toString());
+        eightTile7 = new uni.adavanced_programming.the8puzzle.EightTile(7,this.randomInizialization.get(6).toString());
+        eightTile8 = new uni.adavanced_programming.the8puzzle.EightTile(8, this.randomInizialization.get(7).toString());
+        eightTile9 = new uni.adavanced_programming.the8puzzle.EightTile(9,this.randomInizialization.get(8).toString());
         eightController1 = new uni.adavanced_programming.the8puzzle.EightController();
-        button1 = new java.awt.Button();
+        restartButton = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The 8 puzzle");
 
+        this.addPropertyChangeListener(eightTile1);
         eightTile1.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile1.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile1.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -66,6 +78,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile2);
         eightTile2.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile2.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile2.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -75,6 +88,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile3);
         eightTile3.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile3.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile3.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -84,6 +98,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile4);
         eightTile4.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile4.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile4.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -93,6 +108,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile5);
         eightTile5.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile5.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile5.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -102,6 +118,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile6);
         eightTile6.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile6.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile6.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -111,6 +128,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile7);
         eightTile7.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile7.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile7.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -120,6 +138,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile8);
         eightTile8.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile8.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile8.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -129,6 +148,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
+        this.addPropertyChangeListener(eightTile9);
         eightTile9.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile9.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile9.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -191,10 +211,15 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         eightController1.setMinimumSize(new java.awt.Dimension(112, 18));
         eightController1.setPreferredSize(new java.awt.Dimension(112, 18));
 
-        button1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-        button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button1.setLabel("RESTART");
-        button1.setPreferredSize(new java.awt.Dimension(100, 23));
+        restartButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
+        restartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        restartButton.setLabel("RESTART");
+        restartButton.setPreferredSize(new java.awt.Dimension(100, 23));
+        restartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restartButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,7 +235,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(restartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -220,7 +245,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(restartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(10, Short.MAX_VALUE))
@@ -265,6 +290,13 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         // TODO add your handling code here:
     }//GEN-LAST:event_eightTile9ActionPerformed
 
+    private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
+        Collections.shuffle(randomInizialization);
+        
+        logger.debug("Fired a new restart event to generate new board configuration");  
+        this.firePropertyChange("restart", null, randomInizialization);
+    }//GEN-LAST:event_restartButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -292,6 +324,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         }
         //</editor-fold>
 
+        PropertyConfigurator.configure("src/main/java/uni/adavanced_programming/the8puzzle/log4j.properties");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -301,7 +334,6 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
     private uni.adavanced_programming.the8puzzle.EightController eightController1;
     private uni.adavanced_programming.the8puzzle.EightTile eightTile1;
     private uni.adavanced_programming.the8puzzle.EightTile eightTile2;
@@ -313,6 +345,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     private uni.adavanced_programming.the8puzzle.EightTile eightTile8;
     private uni.adavanced_programming.the8puzzle.EightTile eightTile9;
     private javax.swing.JPanel jPanel1;
+    private java.awt.Button restartButton;
     // End of variables declaration//GEN-END:variables
 
 }

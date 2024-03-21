@@ -35,7 +35,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="button1" min="-2" max="-2" attributes="0"/>
+                              <Component id="restartButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -51,7 +51,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="button1" min="-2" max="-2" attributes="0"/>
+              <Component id="restartButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="eightController1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="10" max="32767" attributes="0"/>
@@ -139,7 +139,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(1,this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(1,this.randomInizialization.get(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile1);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile2">
@@ -158,7 +159,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile2ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(2, this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(2, this.randomInizialization.get(1).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile2);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile3">
@@ -177,7 +179,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile3ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(3, this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(3, this.randomInizialization.get(2).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile3);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile4">
@@ -196,7 +199,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile4ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(4, this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(4, this.randomInizialization.get(3).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile4);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile5">
@@ -215,7 +219,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile5ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(5, this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(5, this.randomInizialization.get(4).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile5);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile6">
@@ -234,7 +239,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile6ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(6,this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(6,this.randomInizialization.get(5).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile6);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile7">
@@ -253,7 +259,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile7ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(7,this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(7,this.randomInizialization.get(6).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile7);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile8">
@@ -272,7 +279,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile8ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(8, this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(8, this.randomInizialization.get(7).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile8);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile9">
@@ -291,7 +299,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile9ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(9,this.randomInizialization.remove(0).toString())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(9,this.randomInizialization.get(8).toString())"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile9);"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -311,7 +320,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button1">
+    <Component class="java.awt.Button" name="restartButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="52" green="50" id="Button.background" palette="3" red="4e" type="palette"/>
@@ -324,6 +333,9 @@
           <Dimension value="[100, 23]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="restartButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

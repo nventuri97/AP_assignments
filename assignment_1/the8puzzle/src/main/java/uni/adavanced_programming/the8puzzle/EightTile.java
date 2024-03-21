@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.swing.JButton;
 
 /**
@@ -33,7 +34,10 @@ public class EightTile extends JButton implements Serializable, PropertyChangeLi
 
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(pce.getPropertyName().equals("restart")){
+            ArrayList<Integer> newConfiguration=(ArrayList<Integer>) pce.getNewValue();
+            this.setLabel(newConfiguration.get(position-1).toString());
+        }
     }
 
     public int getPosition() {
