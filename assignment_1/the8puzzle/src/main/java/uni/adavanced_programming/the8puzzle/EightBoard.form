@@ -140,7 +140,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(1,this.randomInizialization.get(0).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile1);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile1);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile2">
@@ -160,7 +160,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(2, this.randomInizialization.get(1).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile2);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile2);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile3">
@@ -180,7 +180,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(3, this.randomInizialization.get(2).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile3);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile3);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile4">
@@ -200,7 +200,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(4, this.randomInizialization.get(3).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile4);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile4);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile5">
@@ -220,7 +220,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(5, this.randomInizialization.get(4).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile5);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile5);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile6">
@@ -240,7 +240,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(6,this.randomInizialization.get(5).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile6);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile6);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile7">
@@ -260,7 +260,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(7,this.randomInizialization.get(6).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile7);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile7);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile8">
@@ -280,7 +280,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(8, this.randomInizialization.get(7).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile8);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile8);"/>
           </AuxValues>
         </Component>
         <Component class="uni.adavanced_programming.the8puzzle.EightTile" name="eightTile9">
@@ -300,7 +300,7 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new uni.adavanced_programming.the8puzzle.EightTile(9,this.randomInizialization.get(8).toString())"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="this.addPropertyChangeListener(eightTile9);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tiles.add(eightTile9);"/>
           </AuxValues>
         </Component>
       </SubComponents>

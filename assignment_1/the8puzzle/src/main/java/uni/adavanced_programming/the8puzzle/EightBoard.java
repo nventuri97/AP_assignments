@@ -6,6 +6,7 @@ package uni.adavanced_programming.the8puzzle;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.beans.VetoableChangeSupport;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.apache.log4j.LogManager;
@@ -20,16 +21,33 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     
     private final static Logger logger=LogManager.getLogger(EightBoard.class);
     private ArrayList<Integer> randomInizialization=new ArrayList<Integer>();
+    private VetoableChangeSupport vetos = new VetoableChangeSupport( this );
+    private ArrayList<EightTile> tiles=new ArrayList<EightTile>();
 
     /**
      * Creates new form EightBoard
      */
     public EightBoard() {
+        
         for(int i=0;i<9;i++)
             randomInizialization.add(i+1);
         Collections.shuffle(randomInizialization);
+        
         logger.debug("Initializing new components with random configuration");
         initComponents();
+        
+        for(EightTile t: tiles){
+            this.addPropertyChangeListener(t);
+            t.addVetoableChangeListener(eightController1);
+            eightController1.addControllerPropertyChangeListener(t);
+        }
+        
+        // Add property change listener to controller and register it with the controller.
+        this.addPropertyChangeListener(eightController1);
+        
+        // Add vetoable change listener to the controller for managing game state.
+        this.vetos.addVetoableChangeListener(eightController1);
+        eightController1.setCurrentBoardConfiguration(randomInizialization);
     }
     
     /**
@@ -68,7 +86,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The 8 puzzle");
 
-        this.addPropertyChangeListener(eightTile1);
+        tiles.add(eightTile1);
         eightTile1.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile1.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile1.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -78,7 +96,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile2);
+        tiles.add(eightTile2);
         eightTile2.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile2.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile2.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -88,7 +106,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile3);
+        tiles.add(eightTile3);
         eightTile3.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile3.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile3.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -98,7 +116,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile4);
+        tiles.add(eightTile4);
         eightTile4.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile4.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile4.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -108,7 +126,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile5);
+        tiles.add(eightTile5);
         eightTile5.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile5.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile5.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -118,7 +136,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile6);
+        tiles.add(eightTile6);
         eightTile6.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile6.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile6.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -128,7 +146,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile7);
+        tiles.add(eightTile7);
         eightTile7.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile7.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile7.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -138,7 +156,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile8);
+        tiles.add(eightTile8);
         eightTile8.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile8.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile8.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -148,7 +166,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
             }
         });
 
-        this.addPropertyChangeListener(eightTile9);
+        tiles.add(eightTile9);
         eightTile9.setMaximumSize(new java.awt.Dimension(72, 80));
         eightTile9.setMinimumSize(new java.awt.Dimension(72, 80));
         eightTile9.setPreferredSize(new java.awt.Dimension(72, 80));
@@ -255,39 +273,51 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     }// </editor-fold>//GEN-END:initComponents
  
     private void eightTile3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile3ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile3, "click", eightTile3.getLabel(), "9");
+        eightTile3.propertyChange(event);
+        //this.firePropertyChange("click", eightTile3.getLabel(), "9");
     }//GEN-LAST:event_eightTile3ActionPerformed
 
     private void eightTile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile1ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile1, "click", eightTile1.getLabel(), "9");
+        eightTile1.propertyChange(event);
+        //this.firePropertyChange("click", eightTile1.getLabel(), "9");
     }//GEN-LAST:event_eightTile1ActionPerformed
 
     private void eightTile2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile2ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile2, "click", eightTile2.getLabel(), "9");
+        eightTile2.propertyChange(event);
+        //this.firePropertyChange("click", eightTile2.getLabel(), "9");
     }//GEN-LAST:event_eightTile2ActionPerformed
 
     private void eightTile4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile4ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile4, "click", eightTile4.getLabel(), "9");
+        eightTile4.propertyChange(event);
+        //this.firePropertyChange("click", eightTile4.getLabel(), "9");
     }//GEN-LAST:event_eightTile4ActionPerformed
 
     private void eightTile5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile5ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile5, "click", eightTile5.getLabel(), "9");
+        eightTile5.propertyChange(event);
+        //this.firePropertyChange("click", eightTile5.getLabel(), "9");
     }//GEN-LAST:event_eightTile5ActionPerformed
 
-    private void eightTile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eightTile6ActionPerformed
-
     private void eightTile7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile7ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile7, "click", eightTile7.getLabel(), "9");
+        eightTile7.propertyChange(event);
+        //this.firePropertyChange("click", eightTile7.getLabel(), "9");
     }//GEN-LAST:event_eightTile7ActionPerformed
 
     private void eightTile8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile8ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile8, "click", eightTile8.getLabel(), "9");
+        eightTile8.propertyChange(event);
+        //this.firePropertyChange("click", eightTile8.getLabel(), "9");
     }//GEN-LAST:event_eightTile8ActionPerformed
 
     private void eightTile9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile9ActionPerformed
-        // TODO add your handling code here:
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile9, "click", eightTile9.getLabel(), "9");
+        eightTile9.propertyChange(event);
+        //this.firePropertyChange("click", eightTile9.getLabel(), "9");
     }//GEN-LAST:event_eightTile9ActionPerformed
 
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
@@ -296,6 +326,12 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         logger.debug("Fired a new restart event to generate new board configuration");  
         this.firePropertyChange("restart", null, randomInizialization);
     }//GEN-LAST:event_restartButtonActionPerformed
+
+    private void eightTile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile6ActionPerformed
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile6, "click", eightTile6.getLabel(), "9");
+        eightTile6.propertyChange(event);
+        //this.firePropertyChange("click", eightTile6.getLabel(), "9");
+    }//GEN-LAST:event_eightTile6ActionPerformed
 
     /**
      * @param args the command line arguments
