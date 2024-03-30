@@ -48,6 +48,7 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         // Add vetoable change listener to the controller for managing game state.
         this.vetos.addVetoableChangeListener(eightController1);
         eightController1.setCurrentBoardConfiguration(randomInizialization);
+        flipButton1.addVetoableChangeListener(eightController1);
     }
     
     /**
@@ -81,7 +82,8 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         eightTile8 = new uni.adavanced_programming.the8puzzle.EightTile(8, this.randomInizialization.get(7).toString());
         eightTile9 = new uni.adavanced_programming.the8puzzle.EightTile(9,this.randomInizialization.get(8).toString());
         eightController1 = new uni.adavanced_programming.the8puzzle.EightController();
-        restartButton = new java.awt.Button();
+        flipButton1 = new uni.adavanced_programming.the8puzzle.FlipButton();
+        restartButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The 8 puzzle");
@@ -229,10 +231,16 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         eightController1.setMinimumSize(new java.awt.Dimension(112, 18));
         eightController1.setPreferredSize(new java.awt.Dimension(112, 18));
 
-        restartButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-        restartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        restartButton.setLabel("RESTART");
-        restartButton.setPreferredSize(new java.awt.Dimension(100, 23));
+        flipButton1.setLabel("FLIP");
+        flipButton1.setPreferredSize(new java.awt.Dimension(100, 24));
+        flipButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flipButton1ActionPerformed(evt);
+            }
+        });
+
+        restartButton.setText("RESTART");
+        restartButton.setPreferredSize(new java.awt.Dimension(100, 24));
         restartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 restartButtonActionPerformed(evt);
@@ -252,10 +260,11 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(restartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(restartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(flipButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,10 +272,12 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(restartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(flipButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
@@ -320,18 +331,23 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
         //this.firePropertyChange("click", eightTile9.getLabel(), "9");
     }//GEN-LAST:event_eightTile9ActionPerformed
 
+    private void eightTile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile6ActionPerformed
+        PropertyChangeEvent event=new PropertyChangeEvent(eightTile6, "click", eightTile6.getLabel(), "9");
+        eightTile6.propertyChange(event);
+        //this.firePropertyChange("click", eightTile6.getLabel(), "9");
+    }//GEN-LAST:event_eightTile6ActionPerformed
+
+    private void flipButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipButton1ActionPerformed
+        PropertyChangeEvent event=new PropertyChangeEvent(flipButton1, "flip",eightTile1.getLabel(), eightTile2.getLabel());
+        flipButton1.propertyChange(event);
+    }//GEN-LAST:event_flipButton1ActionPerformed
+
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
         Collections.shuffle(randomInizialization);
         
         logger.debug("Fired a new restart event to generate new board configuration");  
         this.firePropertyChange("restart", null, randomInizialization);
     }//GEN-LAST:event_restartButtonActionPerformed
-
-    private void eightTile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile6ActionPerformed
-        PropertyChangeEvent event=new PropertyChangeEvent(eightTile6, "click", eightTile6.getLabel(), "9");
-        eightTile6.propertyChange(event);
-        //this.firePropertyChange("click", eightTile6.getLabel(), "9");
-    }//GEN-LAST:event_eightTile6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,8 +396,9 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     private uni.adavanced_programming.the8puzzle.EightTile eightTile7;
     private uni.adavanced_programming.the8puzzle.EightTile eightTile8;
     private uni.adavanced_programming.the8puzzle.EightTile eightTile9;
+    private uni.adavanced_programming.the8puzzle.FlipButton flipButton1;
     private javax.swing.JPanel jPanel1;
-    private java.awt.Button restartButton;
+    private javax.swing.JButton restartButton;
     // End of variables declaration//GEN-END:variables
 
 }

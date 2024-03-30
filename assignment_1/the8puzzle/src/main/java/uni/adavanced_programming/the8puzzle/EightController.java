@@ -44,6 +44,18 @@ public class EightController extends JLabel implements Serializable, VetoableCha
                 }
                 break;
             case "flip":
+                int firstLabel=Integer.parseInt(pce.getOldValue().toString());
+                int secondLabel=Integer.parseInt(pce.getNewValue().toString());
+                
+                if(this.currentBoardConfiguration.indexOf(9)==8){
+                    for(var listener : support.getPropertyChangeListeners()){
+                        listener.propertyChange(new PropertyChangeEvent(support, pce.getPropertyName(), pce.getOldValue().toString(), pce.getNewValue().toString()));
+                    }
+                    currentBoardConfiguration.set(0, secondLabel);
+                    currentBoardConfiguration.set(1, firstLabel);
+                } else {
+                    throw new PropertyVetoException("Flip is vetoed", pce);
+                }
                 break;
             default: break;
         }

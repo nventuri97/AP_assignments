@@ -62,6 +62,12 @@ public class EightTile extends JButton implements Serializable, PropertyChangeLi
                         this.setLabel(pce.getNewValue().toString());
                     }
                     break;
+                case "flip":
+                    if(pce.getOldValue().equals(this.label)){
+                        this.setLabel(pce.getNewValue().toString());
+                    } else if(pce.getNewValue().equals(this.label)){
+                        this.setLabel(pce.getOldValue().toString());
+                    }
                 default:
                     break;
             }
