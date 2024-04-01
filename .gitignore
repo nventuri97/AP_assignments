@@ -2,3 +2,4 @@
 aux_files
 assignment*/*/target/
 nb*.xml
+*.idea
