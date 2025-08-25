@@ -286,55 +286,46 @@ public class EightBoard extends javax.swing.JFrame implements PropertyChangeList
     private void eightTile3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile3ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile3, "click", eightTile3.getLabel(), "9");
         eightTile3.propertyChange(event);
-        //this.firePropertyChange("click", eightTile3.getLabel(), "9");
     }//GEN-LAST:event_eightTile3ActionPerformed
 
     private void eightTile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile1ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile1, "click", eightTile1.getLabel(), "9");
         eightTile1.propertyChange(event);
-        //this.firePropertyChange("click", eightTile1.getLabel(), "9");
     }//GEN-LAST:event_eightTile1ActionPerformed
 
     private void eightTile2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile2ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile2, "click", eightTile2.getLabel(), "9");
         eightTile2.propertyChange(event);
-        //this.firePropertyChange("click", eightTile2.getLabel(), "9");
     }//GEN-LAST:event_eightTile2ActionPerformed
 
     private void eightTile4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile4ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile4, "click", eightTile4.getLabel(), "9");
         eightTile4.propertyChange(event);
-        //this.firePropertyChange("click", eightTile4.getLabel(), "9");
     }//GEN-LAST:event_eightTile4ActionPerformed
 
     private void eightTile5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile5ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile5, "click", eightTile5.getLabel(), "9");
         eightTile5.propertyChange(event);
-        //this.firePropertyChange("click", eightTile5.getLabel(), "9");
     }//GEN-LAST:event_eightTile5ActionPerformed
 
     private void eightTile7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile7ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile7, "click", eightTile7.getLabel(), "9");
         eightTile7.propertyChange(event);
-        //this.firePropertyChange("click", eightTile7.getLabel(), "9");
     }//GEN-LAST:event_eightTile7ActionPerformed
 
     private void eightTile8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile8ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile8, "click", eightTile8.getLabel(), "9");
         eightTile8.propertyChange(event);
-        //this.firePropertyChange("click", eightTile8.getLabel(), "9");
     }//GEN-LAST:event_eightTile8ActionPerformed
 
     private void eightTile9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile9ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile9, "click", eightTile9.getLabel(), "9");
         eightTile9.propertyChange(event);
-        //this.firePropertyChange("click", eightTile9.getLabel(), "9");
     }//GEN-LAST:event_eightTile9ActionPerformed
 
     private void eightTile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile6ActionPerformed
         PropertyChangeEvent event=new PropertyChangeEvent(eightTile6, "click", eightTile6.getLabel(), "9");
         eightTile6.propertyChange(event);
-        //this.firePropertyChange("click", eightTile6.getLabel(), "9");
     }//GEN-LAST:event_eightTile6ActionPerformed
 
     private void flipButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipButton1ActionPerformed
