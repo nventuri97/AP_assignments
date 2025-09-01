@@ -10,16 +10,16 @@ ciao str = sort [ toLower c | c <- str, isAlpha c ]
 
 -- | Read a file into a multiset of ciao strings
 readMSet :: FilePath -> IO (MSet String)
-readMSet fname = do
-  contents <- readFile fname
+readMSet filename = do
+  contents <- readFile filename
   let ws = words contents
   return (foldl add empty (map ciao ws))
 
 -- | Write multiset to file, one line per element with multiplicity
 writeMSet :: Show a => MSet a -> FilePath -> IO ()
-writeMSet (MS xs) fname = do
+writeMSet (MS xs) filename = do
   let linesOut = [ show v ++ " - " ++ show n | (v,n) <- xs ]
-  writeFile fname (unlines linesOut)
+  writeFile filename (unlines linesOut)
 
 -- | Main test
 main :: IO ()
