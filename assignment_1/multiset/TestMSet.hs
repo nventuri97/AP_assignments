@@ -4,7 +4,7 @@ import MultiSet
 import Data.Char (toLower, isAlpha)
 import Data.List (sort)
 
--- | Compute ciao of a string: lowercase, keep only letters, sort
+-- | Compute ciao of a string: lowercase, keep only letters, alphabetical sort
 ciao :: String -> String
 ciao str = sort [ toLower c | c <- str, isAlpha c ]
 

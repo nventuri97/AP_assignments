@@ -1,4 +1,12 @@
-module MultiSet where
+module MultiSet ( MSet(..)
+  , empty
+  , add
+  , occs
+  , elems
+  , subeq
+  , union
+  , mapMSet
+  ) where
 import Data.Maybe (fromMaybe)
 
 -- | Multiset type: elements with multiplicities
