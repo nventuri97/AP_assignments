@@ -19,14 +19,25 @@ import org.apache.log4j.Logger;
 public class FlipButton extends JButton implements Serializable, PropertyChangeListener{
 
     private final static Logger logger=LogManager.getLogger(FlipButton.class);
+    
     public FlipButton(){
         super();
     }
     
+    /**
+     * This method fires a VetoableChange flip event if it receives a flip event
+     * @param pce PropertyChangeEvent received
+     */
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
         try {
-            this.fireVetoableChange("flip", pce.getOldValue(), pce.getNewValue());
+            switch(pce.getPropertyName()){
+                case "flip":
+                    this.fireVetoableChange("flip", pce.getOldValue(), pce.getNewValue());
+                    break;
+                default: 
+                    break;
+            }
         } catch (PropertyVetoException ex) {
             logger.error("Flip is not possibile, the hole is not in position 9");
         }

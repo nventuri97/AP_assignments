@@ -22,13 +22,28 @@ import org.apache.log4j.Logger;
 public class EightController extends JLabel implements Serializable, VetoableChangeListener, PropertyChangeListener{
     
     private final static Logger logger=LogManager.getLogger(EightController.class);
+    //Array that keeps the current board configuration
     private ArrayList<Integer> currentBoardConfiguration=new ArrayList<Integer>();
+    //PropertyChangeSupport that makes the EightController an instance of PropertyChangeSupport
     private PropertyChangeSupport support=new PropertyChangeSupport(this);
     
+    /**
+     * Empty constructor that initialize also the superclass
+     */
     public EightController(){
         super();
     }
 
+    /**
+     * The vetoableChange method is the method invoked when a PropertyChange event is sent by a tile, and this allows to accept
+     * or not the change on the board. Two different events are possible:
+     * 1. "swap" event: received when a tile is clicked, if valid set OK to the controller label and notify every listeners with a new PropertyChangeEvent.
+     *                  if not valid set KO on the EightController label and fires a PropertyVetoException
+     * 2. "flip" event: received when the flip button is clicked, it switches the first and the second tile label if the hole is in nineth tile notifing the change
+     *                  with a new PropertyChangeEvent to every listener, otherwise throw a new PropertyVetoException.
+     * @param pce the PropertyChangeEvent received
+     * @throws PropertyVetoException 
+     */
     @Override
     public void vetoableChange(PropertyChangeEvent pce) throws PropertyVetoException {
         switch(pce.getPropertyName()){
@@ -66,15 +81,27 @@ public class EightController extends JLabel implements Serializable, VetoableCha
         
     }
     
-     public ArrayList<Integer> getCurrentBoardConfiguration() {
+    /**
+     * Getter for current board configuration
+     * @return the current board configuration
+     */
+    public ArrayList<Integer> getCurrentBoardConfiguration() {
         return currentBoardConfiguration;
     }
 
+    /**
+     * Set the current board configuration when it changes
+     * @param currentBoardConfiguration the new current board configuration
+     */
     public void setCurrentBoardConfiguration(ArrayList<Integer> currentBoardConfiguration) {
         this.currentBoardConfiguration = currentBoardConfiguration;
     }
     
-    
+    /**
+     * This method checks if the tile clicked is adjacent to the hole or not
+     * @param label the label of the tile clicked
+     * @return a boolean, true if the tile clicked is adjacent to the hole, false otherwise
+     */
     public boolean isAdjacent(String label){
         int tilePosition=currentBoardConfiguration.indexOf(Integer.parseInt(label));
         int holePosition=currentBoardConfiguration.indexOf(9);

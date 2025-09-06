@@ -22,7 +22,9 @@ import org.apache.log4j.Logger;
 public class EightTile extends JButton implements Serializable, PropertyChangeListener {
     
     private final static Logger logger=LogManager.getLogger(EightTile.class);
+    //Position on the board 
     private int position;
+    //Actual label of the tile
     private String label;
     private String debugMsg;
     
@@ -30,15 +32,29 @@ public class EightTile extends JButton implements Serializable, PropertyChangeLi
         super();
     }
     
+    /**
+     * Constructor with parameters
+     * @param position position on the board passed by the board itself
+     * @param label label set by the board through the random initial configuration array
+     */
     public EightTile(int position, String label){
         super();
         this.position=position;
         this.label=label;
         
         this.debugMsg="EightTile"+position+" --- ";
+        //Change the graphical aspect of the tile
         this.changeProperty(label);
     }
-
+    
+    /**
+     * This method handles the PropertyChangeEvent received in four different ways
+     * 1. restart: when the restart button is clicked and a new configuration is generated, the tile takes its own value and update its label;
+     * 2. click: when the tile is clicked, it has to fire a new Vetoable Change event with "swap" and set its label if the EightController doesn't veto the change;
+     * 3. swap: when the tile received an answer of a swap event from the EightController that involves it in the swap, set the new label;
+     * 4. flip: when the flip button is clicked and it changes its label value
+     * @param pce the property change event received
+     */
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
         try{
@@ -96,6 +112,10 @@ public class EightTile extends JButton implements Serializable, PropertyChangeLi
         this.changeProperty(label);
     }
     
+    /**
+     * Private function that manages the graphical aspect of the tile
+     * @param label the tile label to set
+     */
     private void changeProperty(String label){
         logger.debug(debugMsg+"Received new label to update value and background color");
         if(this.label.equals("9")){
