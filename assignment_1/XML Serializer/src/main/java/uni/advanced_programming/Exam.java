@@ -1,5 +1,9 @@
 package uni.advanced_programming;
 
+/**
+ * Class representing a university exam, annotated with XMLable annotation
+ * @author nicola
+ */
 @XMLable
 public class Exam {
 
