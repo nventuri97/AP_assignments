@@ -7,3 +7,5 @@ nb*.xml
 *.o
 TestMSet
 **/rajfile
+**/images
+**/*.zip
