@@ -312,7 +312,6 @@
     <Component class="uni.adavanced_programming.the8puzzle.EightController" name="eightController1">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="START"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[112, 18]"/>
         </Property>
