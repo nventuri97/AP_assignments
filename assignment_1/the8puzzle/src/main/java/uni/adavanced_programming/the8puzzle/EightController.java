@@ -28,10 +28,11 @@ public class EightController extends JLabel implements Serializable, VetoableCha
     private PropertyChangeSupport support=new PropertyChangeSupport(this);
     
     /**
-     * Empty constructor that initialize also the superclass
+     * Empty constructor that also initialize the superclass and set its label to start
      */
     public EightController(){
         super();
+        this.setText("START");
     }
 
     /**
@@ -78,7 +79,14 @@ public class EightController extends JLabel implements Serializable, VetoableCha
 
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
-        
+        switch(pce.getPropertyName()){
+            case "restart":
+                this.setText("START");
+                currentBoardConfiguration=(ArrayList<Integer>) pce.getNewValue();
+                break;
+            default:
+                break;
+        }
     }
     
     /**
